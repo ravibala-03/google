@@ -1,0 +1,86 @@
+.GoogleLogo {
+                position:absolute;
+                TOP:10px;
+                LEFT:20px;
+            }
+
+ .SearchBar {
+     position: relative;
+     top: 10px;
+     left: 130px;
+}
+
+.SearchBar input  {
+     height: 40px;
+     width: 600px;
+     border-radius:25px;
+     padding-left: 20px;
+     border:1px solid gray;
+     font-size: 14px;
+
+}
+
+.SearchBar button{
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  height: 40px;
+  width : 40x;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  }
+
+
+
+
+ .SearchBar input:hover {
+box-shadow: 1px 1px 5px gray;
+}
+
+.SearchBar input:active {
+box-shadow: 1px 1px 5px gray;
+}
+
+.SearchResultsBox {
+
+    position: absolute;
+    TOP: 120px;
+    LEFT: 150px;
+
+}
+
+div#SearchBox .Urls a
+{
+    position: relative;
+    top: 13px;
+    font-size: 14px;
+    padding-top: 1px;
+    line-height: 0.3;
+    text-decoration:none;
+    color: #3C4043;
+    font-family: arial,sans-serif;
+}
+
+div#SearchBox .Title h3
+{
+    font-size: 18px;
+    line-height: 0.58;
+    text-decoration: underline;
+    font-family: arial,sans-serif;
+    color: #4a3ea2;
+}
+
+div#SearchBox .Description p
+{
+    font-size: 12px;
+    line-height: 0.58;
+    font-family: arial,sans-serif;
+    color: #3C4043;
+
+}
+
+
+
+

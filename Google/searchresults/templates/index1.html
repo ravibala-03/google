@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<HTML>
+    <head>
+        <title>Google</title>
+        <head>
+            {% load static%}
+       <link rel="stylesheet" href="/static/css/mystyle.css">
+            <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+
+            <script>
+
+                $(document).ready(function(){
+                   $("#searchbutton").click(function(){
+                       var query = $('#searchinput').val();
+                       alert(query);
+                       $.get();
+                       var template ="<div id='SearchBox'><div class='Urls'><a href='{{ results }}' >URL</a></div><div class='Title'><h3>TITLE</h3></div><div class='Description'><p>DESC</p></div></div>"
+
+                      $.ajax({
+                          url: "/search/getquery/",
+                          data: ({'q': query}),
+                          success: function(data) {
+                              results = []
+                              for (i = 0; i < data.length; i++) {
+                                  var results = data[i];
+
+                                  searchresultbox = template.replace("URL",results.urls).replace("TITLE",results.title).replace("DESC",results.description)
+
+
+                              $(".SearchResultsBox").append(searchresultbox)
+
+
+                               }
+
+
+
+                        $("#searchbutton").click(function(){
+                           pageNum=pageNum+1
+                           getMovies(pageNum=pageNum,pageSize=10)
+
+                         }
+
+                       });
+                    });
+
+                });
+
+            </script>
+        </head>
+
+    <body>
+
+
+
+        <div class="GoogleLogo">
+            <img src="/static/image/googlelogo.png" alt="Google" width="100" height="60" border="0" >
+        </div>
+
+           <div class="SearchBar">
+
+
+               <input type="text" id="searchinput"></input>
+          <button id="searchbutton"> Search </button>
+
+
+         </div>
+
+
+        <div class="SearchResultsBox">
+            <!--
+            <div id="SearchBox">
+              <div class="Urls">
+                  <a href="results" >URL</a>
+              </div>
+
+              <div class="Title">
+                <h3>TITLE</h3>
+              </div>
+                <div class="Description">
+                <p>DESC</p>
+               </div>
+            </div>
+            -->
+        </div>
+
+
+
+    </body>
+</HTML>
